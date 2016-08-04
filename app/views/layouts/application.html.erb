@@ -7,23 +7,26 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+	<div id="main-wrapper">
+		<div class="container">
+			<% flash.each do |name, msg| %>
+				<%= content_tag(:div, msg, class:"alert alert-info")%>
+			<%end%>
 
-	<div class="container">
-		<% flash.each do |name, msg| %>
-			<%= content_tag(:div, msg, class:"alert alert-info")%>
-		<%end%>
-
-		<%if user_signed_in? %>
-		
-			<%= render 'layouts/sidebar' %>
-		<%else%>
-			<%= render 'layouts/navbar' %>
-		<%end %>
-	<div id="content-wrapper">
-		<%= yield %>
-    </div>
+			<%if user_signed_in? %>
+			<div id="topnav">
+				<%= render 'layouts/sidebar' %>
+			</div>
+			<%else%>
+			<div id="dashnav">
+				<%= render 'layouts/navbar' %>
+			</div>
+			<%end %>
+		<div id="content-wrapper">
+			<%= yield %>
+	    </div>
 
 	</div>
-
+</div>d
 </body>
 </html>
