@@ -6,12 +6,11 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.string :encrypted_password, null: false, default: ""
 
       ## Extra User Information
-      t.string :first_name, default: ""
-      t.string :last_name, default: ""
-      t.attachment :avatar, default: ""
-      t.string :facebook, default: ""
-      t.string :linked_in, default: ""
-      t.string :website, default: ""
+      t.string :first_name
+      t.string :last_name
+      t.string :facebook
+      t.string :linked_in
+      t.string :website
 
 
       ## Recoverable

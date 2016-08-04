@@ -16,6 +16,10 @@
     <%= f.email_field :email, autofocus: true %>
   </div>
 
+  <%if current_user.avatar.present? %>
+<%= image_tag current_user.avatar.url(:medium) %>
+<%end %>
+
  <div class="field">
     <%= f.label :avatar %><br>
     <%= f.file_field :avatar %>
