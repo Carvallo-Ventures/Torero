@@ -23,37 +23,12 @@ body {
 	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial;
 	color: #333;
 }
+
+container{
+	width:100%;
+	padding:0;
+	margin:0;
+}
 a:hover {
 			text-decoration:none;
 		}
-#main-menu{
-	height: 100%;
-	margin: 0;
-	position: fixed;
-	padding-bottom: 0;
-	
-
-	.navigation {
-		display: block;
-		padding: 46px 0 0;
-
-		a{
-			color:#808b9c;
-			position: relative;
-			transition: all .2s;
-			display:block;
-			line-height: 20px;
-			text-decoration: none;
-			padding: 11px 14px;
-			outline: 0!important;
-		}
-		a:hover {
-			text-decoration:none;
-		}
-
-		li{ display: block;
-
-		}
-	}
-
-}
