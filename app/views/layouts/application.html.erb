@@ -10,10 +10,15 @@
 
 	<div class="container">
 		<% flash.each do |name, msg| %>
-		<%= content_tag(:div, msg, class:"alert alert-info")%>
+			<%= content_tag(:div, msg, class:"alert alert-info")%>
 		<%end%>
 
-		<%= render 'layouts/navbar' %>
+		<%if user_signed_in? %>
+		
+			<%= render 'layouts/sidebar' %>
+		<%else%>
+			<%= render 'layouts/navbar' %>
+		<%end %>
 	<div id="content-wrapper">
 		<%= yield %>
     </div>
