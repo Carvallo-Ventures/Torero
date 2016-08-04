@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Rotations</h1>
+
+
+  <tbody>
+    <% @rotations.each do |rotation| %>
+    <%= rotation.title %>
+    <%= rotation.description %>
+      <tr>
+        <td><%= link_to 'Show', rotation %></td>
+        <td><%= link_to 'Edit', edit_rotation_path(rotation) %></td>
+        <td><%= link_to 'Destroy', rotation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+      <br>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Rotation', new_rotation_path %>
