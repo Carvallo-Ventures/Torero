@@ -15,3 +15,9 @@
 /log/*
 !/log/.keep
 /tmp
+
+#Ignore imagefiles
+public/system/users/avatars/
+
+# Ignore application configuration
+/config/application.yml
