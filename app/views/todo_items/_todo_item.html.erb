@@ -1,0 +1,5 @@
+<p>
+<%= todo_item.content %><br>
+<%= todo_item.due_date %>
+</p>
+<%= link_to "Delete" , rotation_todo_item_path(@rotation, todo_item.id), method: :delete, data:{confirm: "Are you sure?"} %>

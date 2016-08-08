@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
 
-  resources :rotations 
+  resources :rotations do
+    resources :todo_items
+  end
+
   devise_for :users
   root 'welcome#index'
   get '/dashboard' => 'welcome#index'

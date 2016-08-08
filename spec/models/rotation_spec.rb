@@ -19,4 +19,6 @@ describe Rotation do
 	it 'is invalid without  start_date' do
 	expect(FactoryGirl.build(:rotation, start_date: nil)).to_not be_valid
 	end
+
+	it 'returns a sorted array of results that match'
 end

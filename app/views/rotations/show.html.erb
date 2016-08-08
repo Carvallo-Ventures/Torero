@@ -30,5 +30,12 @@
       </div>
 	</div>
 </div>
+
+<div id="todo_items_wrapper">
+    <%= render @rotation.todo_items %>
+    <div id="form">
+        <%= render "todo_items/form" %>
+    </div>
+</div>
 <%= link_to 'Edit', edit_rotation_path(@rotation) %> |
 <%= link_to 'Back', rotations_path %>
