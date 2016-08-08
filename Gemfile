@@ -4,10 +4,10 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.7'
 
-ruby '2.2.4'
+ruby '2.3.1'
+#Setup Ccan
+#gem 'cancancan', '~> 1.15'
 
-# Use sqlite3 as the database for Active Record
-#gem 'sqlite3'
 #use Postgresql 
 gem 'pg'
 #set enviroment Variables 
@@ -39,10 +39,19 @@ gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 #add icons
 gem 'font-awesome-sass'
 
+
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  #add rpec for testing
+  gem 'rspec-rails'
+  #add factory girl to create our factories
+ gem 'factory_girl'
+
 end
+
+
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
@@ -51,6 +60,18 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
+
+group :test do
+	#Faker generates names, email addresses, and other placeholders for factories.
+	gem 'faker'
+	#capybara makes it easy to programatically simulate your users’ interactions with your application.
+	gem 'capybara'
+	#guard-rspec watches your application and tests and runs specs for you automatically when it detects changes.
+	gem 'guard-rspec'
+	# opens your default web browser upon failed integration specs to show you what your application is rendering.
+	gem 'launchy'
+end
+
 
 group :production do
 	#
