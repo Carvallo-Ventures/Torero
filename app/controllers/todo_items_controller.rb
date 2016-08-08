@@ -1,5 +1,6 @@
 class TodoItemsController < ApplicationController
 before_action :set_rotation
+before_action :set_todo_item, except: [:create]
 
 	def create
 		@todo_item = @rotation.todo_items.create(todo_item_params)
@@ -7,7 +8,6 @@ before_action :set_rotation
 	end
 
 	def destroy
-		@todo_item = @rotation.todo_items.find(params[:id])
 		if @todo_item.destroy
 			flash[:success]= "Todo List item was deleted"
 		else
@@ -16,10 +16,24 @@ before_action :set_rotation
 		redirect_to @rotation
 	end
 
+	def complete
+		@todo_item.update_attribute(:completed_at, Time.now)
+		redirect_to @rotation, notice: "Todo item completed"
+	end
+
+	def uncomplete
+		@todo_item.update_attribute(:completed_at, nil)
+		redirect_to @rotation, notice: "Todo item uncompleted"
+	end
+
 private
 
 def set_rotation
 	@rotation=Rotation.find(params[:rotation_id])
+end
+
+def set_todo_item
+	@todo_item = @rotation.todo_items.find(params[:id])
 end
 
 def todo_item_params

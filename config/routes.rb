@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
 
   resources :rotations do
-    resources :todo_items
+    resources :todo_items do
+      member do
+        patch :complete
+        patch :uncomplete
+      end
+    end
   end
 
   devise_for :users
