@@ -7,7 +7,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<div id="main-wrapper">
+	<div>
 		<div class="container">
 			<% flash.each do |name, msg| %>
 				<%= content_tag(:div, msg, class:"alert alert-info")%>
@@ -24,7 +24,7 @@
 			<%end %>
 
 
-		<div id="content-wrapper">
+		<div id="app-container clearfix">
 			<%= yield %>
 	    </div>
 

@@ -19,28 +19,45 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
+$white:#fbfbfb;
+$light_gray: #e2e2e2;
+$blue_hover: #5fa2db;
 
 body {
 	font-size: 13px;
 	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial;
 	color: #333;
+	background: #eef1f4;
+	height: 100%;
+}
+
+.clearfix:before, .clearfix:after{
+	content: "";
+	display: table;
 }
 
 container{
 	width:100%;
 	padding:0;
 	margin:0;
+	max-width:750px;
 }
 a:hover {
 			text-decoration:none;
 		}
+a{
+	text-decoration: none;
+}
+h1{
+	font-size:1.375em;
+	text-transform: uppercase;
+}
 
-/* Sidebar */
+/* Sidenav */
 // Place all the styles related to the welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-/* Dashboard Nav */
 @import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
 
 @import url(http://fonts.googleapis.com/css?family=Titillium+Web:300);
@@ -71,15 +88,13 @@ margin-bottom:5px;
 
 }
 
-
-
 .main-menu:hover,nav.main-menu.expanded {
 width:250px;
 overflow:visible;
 }
 
 .main-menu {
-background:#fbfbfb;
+background:$white;
 border-right:1px solid #e5e5e5;
 position:absolute;
 top:0;
@@ -171,17 +186,17 @@ padding:0;
 }
 .main-menu li:hover>a,nav.main-menu li.active>a,.dropdown-menu>li>a:hover,.dropdown-menu>li>a:focus,.dropdown-menu>.active>a,.dropdown-menu>.active>a:hover,.dropdown-menu>.active>a:focus,.no-touch .dashboard-page nav.dashboard-menu ul li:hover a,.dashboard-page nav.dashboard-menu ul li.active a {
 color:#fff;
-background-color:#5fa2db;
+background-color:$blue_hover;
 }
 
 .main-menu .user-info a:hover{
-		background-color: #fbfbfb;
+		background-color: $white;
 		color:#999;
 }
 
 .area {
 float: left;
-background: #e2e2e2;
+background: $light_gray;
 width: 100%;
 height: 100%;
 }
@@ -192,3 +207,5 @@ height: 100%;
   font-weight: 300;
   src: local('Titillium WebLight'), local('TitilliumWeb-Light'), url(http://themes.googleusercontent.com/static/fonts/titilliumweb/v2/anMUvcNT0H1YN4FII8wpr24bNCNEoFTpS2BTjF6FB5E.woff) format('woff');
 }
+
+

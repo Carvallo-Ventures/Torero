@@ -1,22 +1,51 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Listing Rotations</h1>
 
 
-  <tbody>
+<div class="rotation-container">
+<h1>Rotations</h1>
+
+ 
     <% @rotations.each do |rotation| %>
-    <%= rotation.title %>
-    <%= rotation.description %>
-      <tr>
-        <td><%= link_to 'Show', rotation %></td>
-        <td><%= link_to 'Edit', edit_rotation_path(rotation) %></td>
-        <td><%= link_to 'Destroy', rotation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-      <br>
+    <div class="rotation">
+      <div class="title clearfix"> <!-- Add Active, Complete, etc status in class eg class="title clearfix active" -->
+      <h2>
+        <a href="<%=rotation_path(rotation) %>">
+      <%= rotation.title %>
+        </a>
+      </h2>
+      <p class="details left">Start: <%=rotation.start_date %>   </p>
+      <p class="details right"><!--This is where the status would go --></p>
+      <p class="details left">End: <%= rotation.end_date%></p>
+      </div>
+      <div class="row">
+          <div class="info description col-md-12">
+             <%= rotation.description %>
+          </div>
+      </div>
+      <div class="row">
+          <div class="info col-md-3">
+            <p>Todo</p>
+            <span><i class="fa fa-thumb-tack"></i>
+            <%= rotation.todo_items.count %></span>
+          </div>
+          <div class="info col-md-3">
+            <p>Todo</p>
+            <span><i class="fa fa-thumb-tack"></i>
+            <%= rotation.todo_items.count %></span>
+          </div>
+          <div class="info col-md-3">
+            <p>Todo</p>
+            <span><i class="fa fa-thumb-tack"></i>
+            <%= rotation.todo_items.count %></span>
+          </div>
+      </div>
+        <%= link_to 'Show', rotation %>
+        <%= link_to 'Edit', edit_rotation_path(rotation) %>
+        <%= link_to 'Destroy', rotation, method: :delete, data: { confirm: 'Are you sure?' } %>
+     </div>
+    
     <% end %>
-  </tbody>
-</table>
 
-<br>
+
 
 <%= link_to 'New Rotation', new_rotation_path %>
+</div>

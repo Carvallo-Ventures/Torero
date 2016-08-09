@@ -1,3 +1,70 @@
-// Place all the styles related to the Rotations controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+
+$white:#fbfbfb;
+$light_gray: #e2e2e2;
+$blue_hover: #5fa2db;
+$green: #52d46a;
+
+/* INDEX PAGE */
+.left {
+	float:left;
+}
+.right {
+	float:right;
+}
+.clear{
+	clear: both;
+}
+.rotation-container{
+	
+	.rotation{
+	 width: 33%;
+	 background:$white;
+	 border-radius: 3px;
+	 margin: 0 1% 20px;
+	}
+
+	.title{
+		padding: 20px;
+		margin: 0 0 20px;
+		border-radius:3px 3px 0 0;
+		background:$green;
+		/*this is where you define individual status etc Active etc */
+		.details{
+		color: #407a4d;
+		font-weight: 600;
+		}
+	}
+
+	.info {
+		display: inline-block;
+		vertical-align: top;
+		margin: 0 0 20px 20px;
+		.description{
+			display:block;
+		}
+		span{
+			display:inline-block;
+			width:18px;
+			vertical-align:middle;
+		}
+	}
+
+}
+
+/* SHOW PAGE */
+.app-container{
+	padding:70px 40px 60px 0;
+}
+.box{
+	background:$white;
+	padding:20px;
+	border-radius:3px;
+	margin:0 0 30px;
+
+	.info {
+		display:inline-block;
+		vertical-align: top;
+		margin: 0 20px 20px 0;
+	}
+
+}
