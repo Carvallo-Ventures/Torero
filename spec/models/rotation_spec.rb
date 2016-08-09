@@ -20,5 +20,5 @@ describe Rotation do
 	expect(FactoryGirl.build(:rotation, start_date: nil)).to_not be_valid
 	end
 
-	it 'returns a sorted array of results that match'
+	#it 'returns a sorted array of results that match'
 end

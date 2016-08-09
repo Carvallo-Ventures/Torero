@@ -1,6 +1,6 @@
 <%= form_for([@rotation, @rotation.todo_items.build]) do |f| %>
 	<%= f.text_field :content, placeholder: "New Todo" %></br>
 	<%= f.label :due_date %><br>
-    <%= f.date_select :due_date %></br><br>
+    <%= f.text_field :due_date %></br><br>
     <%= f.submit %>
 <%end%>

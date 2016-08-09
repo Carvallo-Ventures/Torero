@@ -19,8 +19,8 @@
 		<%= link_to "Complete",complete_rotation_todo_item_path(@rotation, todo_item.id), method: :patch %>
 	</div>
 	<div class="todo_item">
-		<p><%= todo_item.content %>
-			<%= todo_item.due_date %>
+		<p><%= todo_item.content %><br>
+			Due: <%= todo_item.due_date %>
 		</p>
 	</div>
 	<div class="trash">

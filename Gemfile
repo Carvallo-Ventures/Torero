@@ -8,6 +8,8 @@ ruby '2.3.1'
 #Setup Ccan
 #gem 'cancancan', '~> 1.15'
 
+#add Jquery UI
+gem 'jquery-ui-rails'
 #use Postgresql 
 gem 'pg'
 #set enviroment Variables 
