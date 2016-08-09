@@ -20,9 +20,9 @@
                         <%= @rotation.todo_items.count %></span>
                     </div>
                     <div class="info col-md-3">
-                        <p>Todo</p>
-                        <span><i class="fa fa-thumb-tack"></i>
-                        <%= @rotation.todo_items.count %></span>
+                        <p>Students</p>
+                        <span><i class="fa fa-users"></i>
+                        <%= @rotation.coops.count %></span>
                     </div>
                     <div class="info col-md-3">
                         <p>Todo</p>
@@ -32,8 +32,12 @@
                 </div> 
 
             <div class="row">
-                <%= link_to 'Edit', edit_rotation_path(@rotation) %>
-                <%= link_to 'Destroy', @rotation, method: :delete, data: { confirm: 'Are you sure?' } %>
+                <%= link_to  edit_rotation_path(@rotation) do%>
+                <i class="fa fa-pencil"></i>
+                <%end%>
+                <%= link_to  @rotation, :class=>"delete",method: :delete, data: { confirm: 'Are you sure?' } do%>
+                <i class="fa fa-trash-o"></i>
+                <%end %>
             </div>
 
             </div>
@@ -42,8 +46,19 @@
                 <h2> To Do </h2>
                 <div id="todo_items_wrapper">
                     <%= render @rotation.todo_items %>
+
                     <div id="form">
                         <%= render "todo_items/form" %>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box Student">
+                <h2> Students </h2>
+                <div id="coops_wrapper">
+                    <%= render @rotation.coops %>
+                    <div id="form">
+                        <%= render "coops/form" %>
                     </div>
                 </div>
             </div>

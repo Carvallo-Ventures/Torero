@@ -13,7 +13,7 @@
         </a>
       </h2>
       <p class="details left">Start: <%=rotation.start_date %>   </p>
-      <p class="details right"><!--This is where the status would go --></p>
+      <p class="details right"><!--This is where the status would go --></p><br>
       <p class="details left">End: <%= rotation.end_date%></p>
       </div>
       <div class="row">
@@ -28,9 +28,9 @@
             <%= rotation.todo_items.count %></span>
           </div>
           <div class="info col-md-3">
-            <p>Todo</p>
-            <span><i class="fa fa-thumb-tack"></i>
-            <%= rotation.todo_items.count %></span>
+            <p>Students</p>
+            <span><i class="fa fa-users"></i>
+            <%= rotation.coops.count %></span>
           </div>
           <div class="info col-md-3">
             <p>Todo</p>

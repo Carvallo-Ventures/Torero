@@ -1,0 +1,10 @@
+<div class="info student">
+	<%=coop.name%>
+	
+
+	<%= link_to rotation_coop_path(@rotation, coop.id), :class=>"delete right", method: :delete, data:{confirm: "Are you sure?"} do%>
+	<i class="fa fa-trash-o"></i>
+	<%end%>
+	<br>
+	<%=coop.email%>
+</div>

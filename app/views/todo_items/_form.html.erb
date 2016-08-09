@@ -2,5 +2,7 @@
 	<%= f.text_field :content, placeholder: "New Todo" %></br>
 	<%= f.label :due_date %>
     <%= f.text_field :due_date %></br><br>
-    <%= f.submit 'Create Todo', :class => "small gray" %>
+   <div class="actions">
+    <%= f.submit %>
+  </div>
 <%end%>
