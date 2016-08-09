@@ -8,12 +8,4 @@ class Rotation < ActiveRecord::Base
 	validates :start_date, presence: true
 
 
-	def send_notifications!
-		#TODO: Get all unique users assigned to the rotation
-		users= rotation.coops.uniq
-		#TODO: Send an email to each of those users 
-		users.each do |user|
-			NotficationMailer.rotation_notification(user, self).deliver_later
-		end
-	end
 end

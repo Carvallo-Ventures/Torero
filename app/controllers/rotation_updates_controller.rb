@@ -26,7 +26,8 @@ class RotationUpdatesController < ApplicationController
   # POST /rotation_updates.json
   def create
     @rotation_update =@rotation.rotation_updates.create(rotation_update_params)
-
+    @rotation_update.send_notifications!
+    
     respond_to do |format|
       if @rotation_update.save
         format.html { redirect_to @rotation, notice: 'Rotation update was successfully created.' }

@@ -1,0 +1,12 @@
+<h1>Hey <%=@user.name %> </h1>
+
+<p> You have been added to the <%=@rotation.title %> group! <br>
+
+This is the new coop information system: Torero.<br>
+With this new system, you will receive updates on your Rotation. 
+These updates are general to all students in the rotation, so if you have any specific questions regarding your rotation, please contact your HR rep!
+</p>
+
+
+<p><%= link_to "See All Updates", rotation_rotation_updates_url(@rotation) %>
+

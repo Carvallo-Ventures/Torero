@@ -26,7 +26,7 @@ class CoopsController < ApplicationController
   def create
     @coop = @rotation.coops.create(coop_params)
     @coop.rotation_id= @rotation.id
-
+    
     respond_to do |format|
       if @coop.save
         format.html { redirect_to @rotation, notice: 'Coop was successfully created.' }
@@ -36,6 +36,8 @@ class CoopsController < ApplicationController
         format.json { render json: @rotation.errors, status: :unprocessable_entity }
       end
     end
+
+    @coop.send_notifications!(@rotation)
   end
 
   # PATCH/PUT /coops/1
