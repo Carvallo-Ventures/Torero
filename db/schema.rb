@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160809141420) do
+ActiveRecord::Schema.define(version: 20160809151510) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,16 @@ ActiveRecord::Schema.define(version: 20160809141420) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "rotation_updates", force: :cascade do |t|
+    t.string   "title"
+    t.string   "content"
+    t.integer  "rotation_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "rotation_updates", ["rotation_id"], name: "index_rotation_updates_on_rotation_id", using: :btree
 
   create_table "rotations", force: :cascade do |t|
     t.string   "title"
@@ -81,5 +91,6 @@ ActiveRecord::Schema.define(version: 20160809141420) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   add_foreign_key "coops", "rotations"
+  add_foreign_key "rotation_updates", "rotations"
   add_foreign_key "todo_items", "rotations"
 end

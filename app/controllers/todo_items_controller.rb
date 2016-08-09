@@ -1,6 +1,7 @@
 class TodoItemsController < ApplicationController
 before_action :set_rotation
 before_action :set_todo_item, except: [:create]
+before_action :authenticate_user!
 
 	def create
 		@todo_item = @rotation.todo_items.create(todo_item_params)

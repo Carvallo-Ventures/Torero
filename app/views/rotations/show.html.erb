@@ -26,8 +26,8 @@
                     </div>
                     <div class="info col-md-3">
                         <p>Todo</p>
-                        <span><i class="fa fa-thumb-tack"></i>
-                        <%= @rotation.todo_items.count %></span>
+                        <span><i class="fa fa-bell"></i>
+                        <%= @rotation.rotation_updates.count %></span>
                     </div>  
                 </div> 
 
@@ -59,6 +59,16 @@
                     <%= render @rotation.coops %>
                     <div id="form">
                         <%= render "coops/form" %>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box update">
+                <h2> Update</h2>
+                <div id="coops_wrapper">
+                    <%= render @rotation.rotation_updates %>
+                    <div id="form">
+                        <%= render "rotation_updates/form" %>
                     </div>
                 </div>
             </div>

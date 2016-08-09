@@ -1,0 +1,17 @@
+<!--<p id="notice"> <notice> </p> --> 
+<div class="box-container">
+<div class="container">
+<h1> Rotation Updates for  <%=@rotation.title %></h1>
+
+    <% @rotation_updates.each do |rotation_update| %>
+
+      <div class="box">
+        <h1><%= rotation_update.title %></h1>
+        <p><%= rotation_update.created_at.strftime("%B %d, %Y") %></p>
+        <p><%= rotation_update.content %></p>
+      <div>
+ 
+
+    <% end %>
+</div>
+</div>

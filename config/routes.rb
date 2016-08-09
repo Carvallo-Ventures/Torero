@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
 
   
+  
   resources :rotations do
     resources :coops
+    resources :rotation_updates
     resources :todo_items do
       member do
         patch :complete

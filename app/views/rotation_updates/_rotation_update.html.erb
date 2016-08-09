@@ -1,0 +1,13 @@
+<div class="info update">
+	<%=rotation_update.title%>
+	<%=rotation_update.content %>
+	
+	<%= link_to  edit_rotation_rotation_update_path(@rotation, rotation_update.id) do%>
+	<i class="fa fa-pencil"></i>
+	<%end%>
+
+	<%= link_to rotation_rotation_update_path(@rotation, rotation_update.id), :class=>"delete right", method: :delete, data:{confirm: "Are you sure?"} do%>
+	<i class="fa fa-trash-o"></i>
+	<%end%>
+	<br>
+</div>
