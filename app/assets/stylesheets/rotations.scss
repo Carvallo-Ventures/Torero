@@ -55,16 +55,53 @@ $green: #52d46a;
 .app-container{
 	padding:70px 40px 60px 0;
 }
-.box{
-	background:$white;
-	padding:20px;
-	border-radius:3px;
-	margin:0 0 30px;
 
-	.info {
-		display:inline-block;
-		vertical-align: top;
-		margin: 0 20px 20px 0;
+.box-container{
+	display:flex;
+	display:-webkit-box;
+	display:-webkit-flex;
+	display:-ms-flexbox;
+	display:flex;
+	-webkit-box-orient:horizontal;
+	-webkit-box-direction:normal;
+	-webkit-flex-direction:row;
+	-ms-flex-direction:row;
+	flex-direction:row;
+	-webkit-box-pack:justify;
+	-webkit-justify-content:space-between;
+	-ms-flex-pack:justify;
+	justify-content:space-between;
+	-webkit-flex-flow:row wrap;
+	-ms-flex-flow:row wrap;
+	flex-flow:row wrap;
+	-webkit-align-content:flex-end;
+	-ms-flex-line-pack:end;
+	align-content:flex-end;
+
+
+	h2 {
+		border-bottom:1px solid #d2d2d2;
+		padding:0 0 15px;
+		margin:0 0 20px;
 	}
 
+	h3 {
+		font-size:1.25rem;
+	}
+	.box{
+    background: #fff;
+    padding: 20px;
+    border-radius: 3px;
+    width: 48%;
+    margin: 0 0 30px;
+    word-wrap: break-word;
+
+		.info {
+			display: inline-block;
+			vertical-align: top;
+			margin: 0 20px 20px 0;
+		}
+
+	}
 }
+
