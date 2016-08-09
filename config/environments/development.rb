@@ -51,13 +51,15 @@ Rails.application.configure do
     enable_starttls_auto: true
   }
 
-  config.paperclip_defaults{
-    strage: s3, 
-    s3_credentails: {
-      bucket: ENV["S3_BUCKET_NAME"],
-      access_key_id:  ENV["AKIAIL6ODBO7P75D4KCA"],
-      secret_access_key: ENV["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"],
-      s3_region: "US Standard",
+  config.paperclip_defaults = {
+    storage: :s3,
+    s3_protocol: 'http',
+    s3_credentials: {
+      bucket: ENV.fetch("S3_BUCKET_NAME"),
+      access_key_id: ENV.fetch("AWS_KEY_ID"),
+      secret_access_key: ENV.fetch("AWS_SECRET"),
+      s3_region: ENV.fetch("AWS_REGION"),
     }
-  }
+}
+
 end
